@@ -39,6 +39,7 @@ class Venda(models.Model):
     hora_venda = models.TimeField(auto_now_add=True, blank=True, null=False)
     data_hora_venda = models.DateTimeField(auto_now_add=True, blank=True, null=False)
 
+    @property
     def __str__(self):
         return str(self.pk) + ' - ' + self.nome
 
@@ -53,5 +54,8 @@ class Funcionário(models.Model):
         return self.nome
 
 
+class Marca(models.Model):
+    nome = models.CharField(max_length=255, blank=False, null=False, verbose_name='Marca')
 
-
+    def __str__(self):
+        return self.nome
