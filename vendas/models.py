@@ -41,3 +41,17 @@ class Venda(models.Model):
 
     def __str__(self):
         return str(self.pk) + ' - ' + self.nome
+
+
+class Funcionário(models.Model):
+    nome = models.CharField(max_length=255, blank=False, null=False, verbose_name='Nome completo')
+    cpf = models.CharField(max_length=11, blank=False, null=False, verbose_name='CPF')
+    matricula = models.CharField(max_length=255, blank=False, null=False, verbose_name='Matricula')
+    email_cliente = models.EmailField(blank=True, null=True, verbose_name='E-mail')
+
+    def __str__(self):
+        return self.nome
+
+
+
+
