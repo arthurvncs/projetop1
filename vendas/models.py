@@ -59,3 +59,9 @@ class Marca(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class Cupon(models.Model):
+    nome = models.CharField(max_length=255, blank=False, null=False, verbose_name='Marca')
+    porcentagem = models.DecimalField(max_digits=12, decimal_places=2, null=False, blank=False,
+                                      verbose_name='Porcentagem do Desconto')
