@@ -2,6 +2,7 @@ from django.db import models
 
 
 # Create your models here.
+from django.db.models import DateField
 
 
 class Produto(models.Model):
@@ -35,11 +36,10 @@ class Venda(models.Model):
     nome = models.CharField(max_length=255, null=False, blank=False, verbose_name='Nome da Venda')
     valor = models.DecimalField(max_digits=12, decimal_places=2, null=False, blank=False,
                                 verbose_name='Valor total da venda')
-    data_venda = models.DateField(auto_now_add=True, blank=True, null=False)
-    hora_venda = models.TimeField(auto_now_add=True, blank=True, null=False)
+    data_venda = models.DateField(auto_now_add=False, blank=True, null=False)
+    hora_venda = models.TimeField(auto_now_add=False, blank=True, null=False)
     data_hora_venda = models.DateTimeField(auto_now_add=True, blank=True, null=False)
 
-    @property
     def __str__(self):
         return str(self.pk) + ' - ' + self.nome
 
