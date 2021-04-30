@@ -62,6 +62,6 @@ class Marca(models.Model):
 
 
 class Cupon(models.Model):
-    nome = models.CharField(max_length=255, blank=False, null=False, verbose_name='Marca')
+    nome = models.CharField(max_length=255, blank=False, null=False, verbose_name='Cupom')
     porcentagem = models.DecimalField(max_digits=12, decimal_places=2, null=False, blank=False,
                                       verbose_name='Porcentagem do Desconto')
